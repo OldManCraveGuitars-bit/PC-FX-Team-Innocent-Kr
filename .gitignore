@@ -10,3 +10,4 @@ __pycache__/
 *.mca
 *.wav
 *.mp4
+build/

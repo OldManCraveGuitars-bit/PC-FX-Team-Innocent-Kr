@@ -50,15 +50,18 @@
 
 맨 위의 큰 이미지는 시작 화면의 원화입니다. 표 안의 이미지는 에뮬레이터에서 캡처한 화면입니다. **PUSH RUN BUTTON**은 게임 안에서 깜빡이므로 정지 스크린샷에서는 보이지 않을 수 있습니다.
 
-## 적용 방법
+## 적용 방법 (Windows)
 
-1. [v0.7 배포 ZIP](https://github.com/OldManCraveGuitars-bit/PC-FX-Team-Innocent-Kr/releases/tag/v0.7)을 내려받아 압축을 풉니다.
-2. 자신의 **일본판 14트랙** CUE/BIN 파일을 모두 **original_disc** 폴더에 넣습니다. 폴더가 없으면 새로 만듭니다. 파일 이름은 원본 Redump 명칭이어야 합니다.
-3. Windows에서 Python 3이 설치된 상태로 **apply_patch.cmd**를 실행합니다. 또는 아래 명령을 실행합니다.
+1. [v0.7 배포 ZIP](https://github.com/OldManCraveGuitars-bit/PC-FX-Team-Innocent-Kr/releases/tag/v0.7)을 풀거나, 같은 페이지에서 **Team-Innocent-KR-Patcher.exe**를 받습니다.
+2. **Team-Innocent-KR-Patcher.exe**를 실행하고 보유한 일본판 **Team Innocent CUE 파일**을 선택합니다. 원본 BIN 14개는 CUE와 같은 폴더에 있어야 합니다.
+3. 결과를 저장할 새 폴더를 확인한 다음 **한국어 패치 적용**을 누릅니다. 검사가 끝나면 **완성 폴더 열기**로 결과를 확인할 수 있습니다.
+4. 새 폴더의 **Team Innocent - The Point of No Return - G.C.P.O.SS (Japan).cue**를 PC-FX 에뮬레이터에서 엽니다.
 
-       python apply_patch.py --source "원본 디스크 폴더"
+GUI EXE에는 패치 데이터가 들어 있으며 **Python 설치가 필요 없습니다**. 작업 중 취소할 수 있고, 실패하거나 취소하면 임시 결과를 정리합니다. 원본은 읽기만 합니다.
 
-4. 만들어진 **patched_disc/Team Innocent - The Point of No Return - G.C.P.O.SS (Japan).cue**를 PC-FX 에뮬레이터에서 엽니다.
+Python을 쓰는 경우 ZIP에 있는 **apply_patch.cmd**를 실행하거나 아래 명령을 사용할 수도 있습니다.
+
+    python apply_patch.py --source "원본 디스크 폴더" --output "새 출력 폴더"
 
 패치 프로그램은 원본 Track 02의 SHA-256이 **56931167724db296481606b6ba4d873097754faf4a59bd352a030dd8301028aa**인지 검사합니다. 패치 후에도 결과 해시를 검사합니다. **원본 디스크 파일을 덮어쓰지 않습니다.** 다른 덤프에는 적용하지 않습니다.
 
