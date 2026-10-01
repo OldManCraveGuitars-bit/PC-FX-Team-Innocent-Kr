@@ -1,0 +1,12 @@
+original_disc/
+patched_disc/
+dist/
+__pycache__/
+*.pyc
+*.bin
+*.cue
+*.iso
+*.sav
+*.mca
+*.wav
+*.mp4
