@@ -26,6 +26,14 @@
 
 ![한글 파일 선택 화면](images/file-select.png)
 
+### 게임 대사 화면
+
+미션 1 브리핑에서 실제로 표시된 한글 대사창입니다.
+
+| 긴급 지령 | 통신 위성 보고 | 조사 보고 |
+| --- | --- | --- |
+| ![미션 1 긴급 지령 대사](images/dialogue-mission1-order.png) | ![통신 위성 고장 보고 대사](images/dialogue-mission1-satellite.png) | ![위성 조사 결과 대사](images/dialogue-mission1-map.png) |
+
 맨 위의 큰 이미지는 시작 화면의 원화입니다. 표 안의 이미지는 에뮬레이터에서 캡처한 화면입니다. **PUSH RUN BUTTON**은 게임 안에서 깜빡이므로 정지 스크린샷에서는 보이지 않을 수 있습니다.
 
 ## 적용 방법
