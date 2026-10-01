@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Apply the Team Innocent KR v0.75 patch to a verified Japanese PC-FX dump.
+"""Apply the Team Innocent KR v0.755 patch to a verified Japanese PC-FX dump.
 
 The original disc is only read. A temporary copy is validated before it
 becomes the output folder, so failed or cancelled runs leave no partial disc.
@@ -20,10 +20,10 @@ from typing import Callable
 BASE = "Team Innocent - The Point of No Return - G.C.P.O.SS (Japan)"
 TRACK = f"{BASE} (Track 02).bin"
 CUE = f"{BASE}.cue"
-PATCH = Path(getattr(sys, "_MEIPASS", Path(__file__).resolve().parent)) / "patches" / "Team-Innocent-KR-v0.75.tipatch"
-MAGIC = b"TIKR0750"
+PATCH = Path(getattr(sys, "_MEIPASS", Path(__file__).resolve().parent)) / "patches" / "Team-Innocent-KR-v0.755.tipatch"
+MAGIC = b"TIKR0755"
 EXPECTED_SOURCE = "56931167724db296481606b6ba4d873097754faf4a59bd352a030dd8301028aa"
-EXPECTED_TARGET = "fd28be591dab23f5971838438ea025460536480ac9f1f633f65895bf4d880ee5"
+EXPECTED_TARGET = "91bcb212d4dd81cda669feafe2c1c0f2bca50cc607004f12a7d1af9268bd74b1"
 Progress = Callable[[int, str, float], None]
 Cancellation = Callable[[], bool]
 
@@ -138,7 +138,7 @@ def apply_patch(source: Path, output: Path, progress: Progress | None = None,
 
     check_cancelled(cancelled)
     output.parent.mkdir(parents=True, exist_ok=True)
-    stage = Path(tempfile.mkdtemp(prefix="team-innocent-kr-v0.75-", dir=output.parent))
+    stage = Path(tempfile.mkdtemp(prefix="team-innocent-kr-v0.755-", dir=output.parent))
     try:
         total_copy = sum((source / name).stat().st_size for name in filenames)
         copied = 0
@@ -176,7 +176,7 @@ def apply_patch(source: Path, output: Path, progress: Progress | None = None,
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Apply Team Innocent KR v0.75 to the original Japanese PC-FX disc.")
+    parser = argparse.ArgumentParser(description="Apply Team Innocent KR v0.755 to the original Japanese PC-FX disc.")
     parser.add_argument("--source", type=Path, default=Path(__file__).resolve().parent / "original_disc",
                         help="Folder containing the original Japanese CUE and all 14 BIN tracks")
     parser.add_argument("--output", type=Path, default=Path(__file__).resolve().parent / "patched_disc",
