@@ -5,13 +5,40 @@
 # PC-FX 팀 이노센트 한국어 패치
 
 > [!WARNING]
-> **v0.76은 전체 플레이 검증이 끝나지 않은 테스트 버전입니다.** 일부 구간의 실행과 패치 적용을 확인했지만, 모든 대화·영상·자막 타이밍을 끝까지 검증하지 않았습니다. 번역, 자막, 표시 및 진행 오류가 있을 수 있습니다. 원본 디스크와 저장 파일을 보관해 주세요.
+> **v0.8은 스테이지 1 검수를 마친 테스트 버전입니다.** 스테이지 2·3 및 모든 분기의 전체 검증은 아직 진행 중이며, 번역·자막·표시·진행 오류가 남아 있을 수 있습니다. 원본 디스크와 저장 파일을 보관해 주세요.
 
 일본판 **Team Innocent: The Point of No Return - G.C.P.O.SS**의 텍스트와 영상 음성을 한국어로 즐기기 위한 패치입니다. 게임의 원본 CUE/BIN 파일은 포함하지 않습니다.
 
-**[v0.76 다운로드](https://github.com/OldManCraveGuitars-bit/PC-FX-Team-Innocent-Kr/releases/tag/v0.76)** · **[변경 사항](RELEASE_NOTES_v0.76.md)**
+**[v0.8 다운로드](https://github.com/OldManCraveGuitars-bit/PC-FX-Team-Innocent-Kr/releases/tag/v0.8)** · **[변경 사항](RELEASE_NOTES_v0.8.md)**
 
-## v0.76 수정 내용
+## v0.8 — 스테이지 1 검수 완료
+
+**스테이지 1 검수 완료.** 사용자 플레이 테스트와 제보 사항 반영을 기준으로 합니다. 스테이지 2·3의 전체 플레이와 모든 분기 검수는 계속 진행합니다.
+
+### 이번 변경 사항
+
+- 미션 1 클리어 후 누락됐던 나레이션 **3종**을 한글화했습니다. 이 부분은 영상이 아닌 게임의 스크롤 문구이며, 현재 나레이션 문구 23개를 반영했습니다.
+- 전체 대사 1,371개와 초기 문구 207개를 검수해 **267개 항목의 띄어쓰기·표현·문장 길이**를 수정했습니다. 원문의 명시적 줄바꿈과 제어 코드를 유지했습니다.
+- 타이머 확인 문구에 남아 있던 일본어 분 단위 `分`을 **분**으로 수정했습니다.
+- 결과 화면의 **SCENARIO POINT, 점수 숫자, MISSION CLEAR, PERFECT CLEAR, TRY AGAIN, SAME MISSION, CONGRATULATIONS!**를 가운데 정렬했습니다.
+- 미션 1·2·3 선택 화면의 제목도 글자 길이에 맞춰 가운데 정렬했습니다.
+- 기존 대사 빠른 넘기기, 영상 건너뛰기, MO 재생 및 타이틀 복귀 수정도 포함합니다.
+
+### 화면 확인
+
+아래는 에뮬레이터에서 정렬을 확인한 재현 화면입니다.
+
+| 미션 제목 가운데 정렬 | 결과 문구·점수 가운데 정렬 |
+| --- | --- |
+| ![미션 2 한글 제목 가운데 정렬](images/mission2-title-v0.8.png) | ![미션 1 결과 문구와 점수 가운데 정렬](images/mission1-result-v0.8.png) |
+
+<p align="center">
+  <img src="images/perfect-clear-v0.8.png" alt="CONGRATULATIONS와 PERFECT CLEAR 가운데 정렬" width="600">
+</p>
+
+일반 Mednafen에서 세 미션의 제목과 일반 클리어·재도전·퍼펙트 클리어 결과 화면을 확인했습니다. 별도 귀환 재현에서는 한글 나레이션이 끝난 뒤 대사창 없이 결과 화면으로 넘어가는 것도 확인했습니다. 전체 완료 조건별 분기와 PC-FX 실기 동작까지 검증한 것은 아닙니다.
+
+## 이전 v0.76 수정 내용
 
 - 아이템을 사용할 수 없는 장소의 일본어 안내를 **여기서 사용해도 소용없습니다**로 한글화했습니다.
 - **MO 01 첫 인물 자료에서 Ⅰ을 눌러도 넘어가지 않던 조작을 수정했습니다.** PLAY를 선택한 재생 상태에서 Ⅰ로 다음 자료를 넘길 수 있습니다. 글자가 나오는 중에는 Ⅱ로 글자를 완성한 뒤 Ⅰ을 누르세요.
@@ -106,7 +133,7 @@ v0.735에서 캐릭터끼리 주고받는 일반 대화는 음성이 끝나야 �
 
 ## 적용 방법 (Windows)
 
-1. **[v0.76 릴리스](https://github.com/OldManCraveGuitars-bit/PC-FX-Team-Innocent-Kr/releases/tag/v0.76)**에서 **Team-Innocent-KR-Patcher.exe** 또는 전체 ZIP을 받습니다.
+1. **[v0.8 릴리스](https://github.com/OldManCraveGuitars-bit/PC-FX-Team-Innocent-Kr/releases/tag/v0.8)**에서 **Team-Innocent-KR-Patcher.exe** 또는 전체 ZIP을 받습니다.
 2. EXE를 실행하고 보유한 **일본판 원본 CUE 파일**을 선택합니다. 원본 BIN 14개는 CUE와 같은 폴더에 있어야 합니다.
 3. 새 출력 폴더를 확인하고 **한국어 패치 적용**을 누릅니다. 완료되면 **완성 폴더 열기**로 결과를 확인합니다.
 4. 완성 폴더의 **Team Innocent - The Point of No Return - G.C.P.O.SS (Japan).cue**를 PC-FX 에뮬레이터에서 엽니다.
@@ -121,7 +148,7 @@ Python 사용자는 ZIP의 **apply_patch.cmd**를 실행하거나 다음 명령�
 
 원본 Track 02의 SHA-256이 **56931167724db296481606b6ba4d873097754faf4a59bd352a030dd8301028aa**인 덤프를 지원합니다. 적용 전후 해시를 검사합니다.
 
-다른 패처를 사용하려면 원본 **Track 02 BIN**에 **patches/Team-Innocent-KR-v0.76.xdelta**를 적용한 뒤, 나머지 13개 트랙과 원본 CUE를 함께 사용하세요. 동봉한 Python 패처는 별도 xdelta 프로그램 없이 **tipatch**를 사용합니다.
+다른 패처를 사용하려면 원본 **Track 02 BIN**에 **patches/Team-Innocent-KR-v0.8.xdelta**를 적용한 뒤, 나머지 13개 트랙과 원본 CUE를 함께 사용하세요. 동봉한 Python 패처는 별도 xdelta 프로그램 없이 **tipatch**를 사용합니다.
 
 ## 문제 제보
 

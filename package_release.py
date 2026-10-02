@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""Package the v0.76 test patch without any copyrighted disc tracks."""
+"""Package the v0.8 test patch without any copyrighted disc tracks."""
 from __future__ import annotations
 from pathlib import Path
 from zipfile import ZipFile, ZIP_DEFLATED
 
 ROOT=Path(__file__).resolve().parent
-VERSION="v0.76"
+VERSION="v0.8"
 FILES=[
     "README.md",f"RELEASE_NOTES_{VERSION}.md",
     "apply_patch.py","apply_patch.cmd","patch_gui.py",

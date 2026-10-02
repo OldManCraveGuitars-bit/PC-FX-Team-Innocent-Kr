@@ -5,7 +5,7 @@ a = Analysis(
     ['patch_gui.py'],
     pathex=[],
     binaries=[],
-    datas=[('patches/Team-Innocent-KR-v0.76.tipatch', 'patches')],
+    datas=[('patches/Team-Innocent-KR-v0.8.tipatch', 'patches')],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},
