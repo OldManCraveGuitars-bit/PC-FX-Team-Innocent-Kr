@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Windows desktop patcher for the Team Innocent KR v0.85 test release."""
+"""Windows desktop patcher for the Team Innocent KR v0.95 test release."""
 from __future__ import annotations
 
 import argparse
@@ -22,11 +22,11 @@ WHITE = "#ffffff"
 
 
 def available_output(parent: Path) -> Path:
-    first = parent / "Team Innocent KR v0.85"
+    first = parent / "Team Innocent KR v0.95"
     if not first.exists():
         return first
     for number in range(2, 1000):
-        candidate = parent / f"Team Innocent KR v0.85 ({number})"
+        candidate = parent / f"Team Innocent KR v0.95 ({number})"
         if not candidate.exists():
             return candidate
     raise RuntimeError("출력 폴더 이름을 정할 수 없습니다. 다른 위치를 선택해 주세요.")
@@ -53,7 +53,7 @@ class PatchWindow:
     def __init__(self) -> None:
         self.root = tk.Tk()
         self.root.withdraw()
-        self.root.title("팀 이노센트 한국어 패치 v0.85")
+        self.root.title("팀 이노센트 한국어 패치 v0.95")
         self.root.geometry("790x580")
         self.root.minsize(710, 530)
         self.root.configure(bg=BG)
@@ -83,7 +83,7 @@ class PatchWindow:
                  font=("Malgun Gothic", 10, "bold")).pack(anchor="w")
         tk.Label(title, text="팀 이노센트 한국어 패치", bg=INK, fg=WHITE,
                  font=("Malgun Gothic", 19, "bold")).pack(anchor="w", pady=(3, 2))
-        tk.Label(title, text="v0.85 테스트 버전  ·  일본판 14트랙 CUE/BIN 전용",
+        tk.Label(title, text="v0.95 테스트 버전  ·  일본판 14트랙 CUE/BIN 전용",
                  bg=INK, fg="#d0dbe9", font=("Malgun Gothic", 10)).pack(anchor="w")
 
         # Reserve the action row before the flexible log area. Windows DPI
