@@ -4,7 +4,7 @@ from __future__ import annotations
 import argparse, hashlib, json, struct, zlib
 from pathlib import Path
 
-MAGIC = b"TIKR0950"
+MAGIC = b"TIKR1200"
 SECTOR = 2352
 TRACK = "Team Innocent - The Point of No Return - G.C.P.O.SS (Japan) (Track 02).bin"
 
@@ -42,7 +42,7 @@ def build(source: Path, target: Path, output: Path) -> dict:
     compressed = zlib.compress(data, level=9)
     header = {
         "schema": "team-innocent-kr-sparse-patch/v1",
-        "version": "v0.95",
+        "version": "v1.2",
         "track_name": TRACK,
         "source_size": source.stat().st_size,
         "source_sha256": source_hash.hexdigest(),

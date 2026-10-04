@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Apply the Team Innocent KR v0.95 patch to a verified Japanese PC-FX dump.
+"""Apply the Team Innocent KR v1.2 patch to a verified Japanese PC-FX dump.
 
 The original disc is only read. A temporary copy is validated before it
 becomes the output folder, so failed or cancelled runs leave no partial disc.
@@ -20,10 +20,10 @@ from typing import Callable
 BASE = "Team Innocent - The Point of No Return - G.C.P.O.SS (Japan)"
 TRACK = f"{BASE} (Track 02).bin"
 CUE = f"{BASE}.cue"
-PATCH = Path(getattr(sys, "_MEIPASS", Path(__file__).resolve().parent)) / "patches" / "Team-Innocent-KR-v0.95.tipatch"
-MAGIC = b"TIKR0950"
+PATCH = Path(getattr(sys, "_MEIPASS", Path(__file__).resolve().parent)) / "patches" / "Team-Innocent-KR-v1.2.tipatch"
+MAGIC = b"TIKR1200"
 EXPECTED_SOURCE = "56931167724db296481606b6ba4d873097754faf4a59bd352a030dd8301028aa"
-EXPECTED_TARGET = "b13c91ee8abbd5fbb2d5297b923ffc4e1b38c034932ea14b7dedee39a7259dfe"
+EXPECTED_TARGET = "3dd9748242e39c05671a220b89b61743ae5fd7634a79848c196124238132763d"
 Progress = Callable[[int, str, float], None]
 Cancellation = Callable[[], bool]
 
@@ -138,7 +138,7 @@ def apply_patch(source: Path, output: Path, progress: Progress | None = None,
 
     check_cancelled(cancelled)
     output.parent.mkdir(parents=True, exist_ok=True)
-    stage = Path(tempfile.mkdtemp(prefix="team-innocent-kr-v0.95-", dir=output.parent))
+    stage = Path(tempfile.mkdtemp(prefix="team-innocent-kr-v1.2-", dir=output.parent))
     try:
         total_copy = sum((source / name).stat().st_size for name in filenames)
         copied = 0
@@ -176,7 +176,7 @@ def apply_patch(source: Path, output: Path, progress: Progress | None = None,
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Apply Team Innocent KR v0.95 to the original Japanese PC-FX disc.")
+    parser = argparse.ArgumentParser(description="Apply Team Innocent KR v1.2 to the original Japanese PC-FX disc.")
     parser.add_argument("--source", type=Path, default=Path(__file__).resolve().parent / "original_disc",
                         help="Folder containing the original Japanese CUE and all 14 BIN tracks")
     parser.add_argument("--output", type=Path, default=Path(__file__).resolve().parent / "patched_disc",
@@ -185,7 +185,7 @@ def main() -> int:
     cue = apply_patch(args.source, args.output,
                       lambda step, label, fraction: print(f"{label}: {fraction:.0%}") if fraction == 1 else None)
     print(f"Done: {cue}")
-    print("This is an unverified test release. Keep your original disc files.")
+    print("Unofficial Korean translation v1.2. Open the new CUE after a cold boot.")
     return 0
 
 
