@@ -90,6 +90,27 @@
 
 **새 디스크를 처음부터 부팅한 다음 게임 내 LOAD로 저장 데이터를 불러오세요.** 이전 버전의 즉시 저장 상태에는 이전 코드가 남아 있을 수 있습니다.
 
+## 패치 전·후 해시값 (SHA-256)
+
+아래는 **일본판 원본과 v1.2 패치 적용 후의 Track 02 BIN 파일**을 직접 계산한 값입니다. CUE, ZIP 또는 패처 EXE의 해시가 아닙니다.
+
+**검사할 파일:** `Team Innocent - The Point of No Return - G.C.P.O.SS (Japan) (Track 02).bin`
+
+**파일 크기:** 패치 전·후 모두 **502,495,392바이트**
+
+| 구분 | SHA-256 |
+| --- | --- |
+| **패치 전 — 일본판 원본 Track 02** | `56931167724db296481606b6ba4d873097754faf4a59bd352a030dd8301028aa` |
+| **패치 후 — v1.2 한국어판 Track 02** | `3dd9748242e39c05671a220b89b61743ae5fd7634a79848c196124238132763d` |
+
+원본 폴더 또는 패치가 완료된 폴더에서 PowerShell을 열고 다음 명령으로 확인할 수 있습니다. 출력된 `Hash`를 해당 행과 비교하세요. 영문 대소문자는 무관합니다.
+
+```powershell
+Get-FileHash -Algorithm SHA256 -LiteralPath '.\Team Innocent - The Point of No Return - G.C.P.O.SS (Japan) (Track 02).bin'
+```
+
+패치로 변경되는 디스크 파일은 **Track 02**입니다. 나머지 13개 BIN 트랙과 CUE는 원본과 같습니다. 다운로드한 EXE·ZIP·개별 패치 파일의 해시는 별도의 [SHA256SUMS-v1.2.txt](https://github.com/OldManCraveGuitars-bit/PC-FX-Team-Innocent-Kr/releases/download/v1.2/SHA256SUMS-v1.2.txt)에서 확인할 수 있습니다.
+
 ## 검수 결과
 
 **미션 2까지 검수 완료**는 사용자 플레이와 제보 반영 기준입니다. 이번 버전은 미션 3의 제보된 영상과 엔딩, 감상 메뉴를 PC Mednafen에서 추가 확인했습니다. 최신 디스크 재읽기 20개 검사와 영상 감상·엔딩 단위 검사 9개를 통과했고, 배포 패치의 적용 결과도 최신 빌드와 대조했습니다.
